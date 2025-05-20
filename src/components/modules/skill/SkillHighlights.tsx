@@ -97,9 +97,9 @@ export default function SkillHighlights() {
         {skills.map((section) => (
           <Card
             key={section.title}
-            className="bg-card text-card-foreground shadow-md h-full"
+            className="bg-card !py-0 !gap-1 text-card-foreground shadow-md h-full"
           >
-            <div className="space-y-1.5 p-6 flex items-center gap-3 h-6">
+           <div className="p-6 flex items-center gap-3">
               <div>{section.icon}</div>
               <h3 className=" font-semibold leading-none tracking-tight text-2xl">
                 {section.title}
