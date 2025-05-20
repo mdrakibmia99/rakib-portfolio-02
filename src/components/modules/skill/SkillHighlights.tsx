@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // components/SkillHighlights.tsx
 
 import Image from "next/image";
@@ -11,12 +12,20 @@ import {
   WrenchIcon,
   PaletteIcon,
 } from "lucide-react";
-import icon from "@/assets/skill/nodejs.webp";
+import icon from "@/assets/skill/nodejs.webp";import { JSX } from "react";
+export const iconMap: Record<string, JSX.Element> = {
+  LaptopIcon: <LaptopIcon className="h-6 w-6 text-blue-400" />,
+  ServerIcon: <ServerIcon className="h-6 w-6 text-blue-400" />,
+  DatabaseIcon: <DatabaseIcon className="h-6 w-6 text-blue-400" />,
+  CodeIcon: <CodeIcon className="h-6 w-6 text-blue-400" />,
+  WrenchIcon: <WrenchIcon className="h-6 w-6 text-blue-400" />,
+  PaletteIcon: <PaletteIcon className="h-6 w-6 text-blue-400" />,
+};
 
 const skills = [
   {
     title: "Frontend",
-    icon: <LaptopIcon className="h-6 w-6 text-blue-400" />,
+    icon: "LaptopIcon",
     items: [
       { name: "JavaScript", icon },
       { name: "TypeScript", icon },
@@ -33,7 +42,7 @@ const skills = [
   },
   {
     title: "Backend",
-    icon: <ServerIcon className="h-6 w-6 text-blue-300" />,
+    icon: "ServerIcon",
     items: [
       { name: "Node.js", icon },
       { name: "Express.js", icon },
@@ -42,7 +51,7 @@ const skills = [
   },
   {
     title: "Database",
-    icon: <DatabaseIcon className="h-6 w-6 text-blue-300" />,
+    icon: "DatabaseIcon" ,
     items: [
       { name: "MongoDB", icon },
       { name: "PostgreSQL", icon },
@@ -52,7 +61,7 @@ const skills = [
   },
   {
     title: "Programming",
-    icon: <CodeIcon className="h-6 w-6 text-blue-300" />,
+    icon: "CodeIcon",
     items: [
       { name: "JavaScript", icon },
       { name: "TypeScript", icon },
@@ -61,7 +70,7 @@ const skills = [
   },
   {
     title: "Tools",
-    icon: <WrenchIcon className="h-6 w-6 text-blue-300" />,
+    icon: "WrenchIcon",
     items: [
       { name: "VS Code", icon },
       { name: "Git CLI", icon },
@@ -73,7 +82,7 @@ const skills = [
   },
   {
     title: "Creative",
-    icon: <PaletteIcon className="h-6 w-6 text-blue-300" />,
+    icon: "PaletteIcon",
     items: [
       { name: "Figma", icon },
       { name: "Illustrator", icon },
@@ -89,7 +98,7 @@ export default function SkillHighlights() {
         <Badge variant="secondary" className="mb-2">
           My Skills
         </Badge>
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
           Skill Highlights
         </h2>
       </div>
@@ -100,8 +109,8 @@ export default function SkillHighlights() {
             className="bg-card !py-0 !gap-1 text-card-foreground shadow-md h-full"
           >
            <div className="p-6 flex items-center gap-3">
-              <div>{section.icon}</div>
-              <h3 className=" font-semibold leading-none tracking-tight text-2xl">
+              <div>{iconMap[section.icon as any]}</div>
+              <h3 className=" font-bold leading-none tracking-tight text-2xl">
                 {section.title}
               </h3>
             </div>

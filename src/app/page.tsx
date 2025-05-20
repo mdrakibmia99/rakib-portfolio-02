@@ -1,8 +1,11 @@
+'use client'
+
+import SkillHighlights from "@/components/modules/skill/SkillHighlights";
 
 export default function Home() {
   return (
     <div>
-      <p>this is hero</p>
+        <SkillHighlights/>
     </div>
   );
 }
