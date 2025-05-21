@@ -30,11 +30,11 @@ const Navbar = () => {
 
   return (
     <header className="py-4 sticky top-0 z-50 bg-white dark:bg-black shadow-md transition-colors duration-300">
-      <div className="container mx-auto flex justify-between items-center px-4 lg:px-0">
+      <div className="custom-container flex justify-between items-center px-4 lg:px-0">
         {/* Left Side - Logo */}
         <Link
           href="/"
-          className="text-3xl font-extrabold text-cyan-400  "
+          className="text-3xl font-bold text-cyan-400  "
         >
           RAKIB
         </Link>
