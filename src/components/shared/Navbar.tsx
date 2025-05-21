@@ -18,15 +18,19 @@ import { ModeToggle } from "@/components/ModeToggle";
 
 
 const menuList = [
-  { id: 1, name: "HOME", link: "/" },
-  { id: 2, name: "PROJECTS", link: "/projects" },
-  { id: 3, name: "BLOGS", link: "/blog" },
-  { id: 4, name: "CONTACT", link: "/contact" },
+  { id: 1, name: "HOME", link: "#home" },
+  // { id: 2, name: "ABOUT", link: "#about" },
+  // { id: 3, name: "EDUCATION", link: "#education" },
+  { id: 4, name: "Skill", link: "#skill" },
+  { id: 5, name: "PROJECTS", link: "#projects" },
+  { id: 6, name: "BLOGS", link: "#blogs" },
+  { id: 7, name: "CONTACT", link: "#contact" },
 ];
 
 const Navbar = () => {
 
   const pathname = usePathname(); // Get current route
+  console.log(pathname,'patha name');
 
   return (
     <header className="py-4 sticky top-0 z-50 bg-white dark:bg-black shadow-md transition-colors duration-300">

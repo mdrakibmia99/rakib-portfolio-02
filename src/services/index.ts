@@ -27,3 +27,16 @@ export const sendEmail = async (data: TContactEmailPayload): Promise<any> => {
   const result = await res.json();
   return result;
 };
+
+export const getSpecificProject = async (id: string) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_API}/projects/${id}`
+    );
+
+    const data = await res.json();
+    return data;
+  } catch (error: any) {
+    return Error(error);
+  }
+};

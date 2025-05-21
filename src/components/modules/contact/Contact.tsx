@@ -53,19 +53,8 @@ export default function Contact() {
   };
 
   return (
-    <section className="custom-container py-16 max-w-5xl  p-6 ">
-        <motion.div
-        className=""
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-
-         <h3 className="text-4xl text-center mb-10 font-semibold">
-          <span className="text-white text-shadow">Contact</span>
-        </h3>
-      </motion.div>
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 py-16">
+    <section className="custom-container max-w-5xl  p-6 ">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 lg:py-16">
       {/* Left Animation Section */}
       <motion.div
         className="w-full md:w-1/2 text-center md:text-left"

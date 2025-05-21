@@ -99,12 +99,12 @@ export default function SkillHighlights({
   skills: TSkillCategory[];
 }) {
   return (
-    <section className="custom-container py-16">
+    <section id="skill" className="custom-container py-16">
       <div className="text-center mb-8">
         <Badge variant="secondary" className="mb-2">
           My Skills
         </Badge>
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10">
           Skill Highlights
         </h2>
       </div>

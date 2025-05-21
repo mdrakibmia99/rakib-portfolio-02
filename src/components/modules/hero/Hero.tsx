@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <div
+    id="home"
       className="bg-[url('https://github.com/mdrakibmia99/blog-portfolio/blob/main/client/src/assets/images/herobg.png?raw=true')] 
     bg-cover bg-no-repeat bg-center min-h-[93vh] flex items-center justify-center py-12"
     >

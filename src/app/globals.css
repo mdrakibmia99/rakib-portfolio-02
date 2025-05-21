@@ -205,3 +205,12 @@
 .custom-container{
   @apply  px-4 md:px-8 lg:px-12 xl:px-20 container mx-auto
 }
+  /* Hide scrollbar for Chrome, Safari, and Edge */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+}

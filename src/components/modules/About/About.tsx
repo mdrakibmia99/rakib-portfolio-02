@@ -9,10 +9,10 @@ import AboutLeft from "./AboutLeft";
 
 const About = () => {
   return (
-    <section className="m-16  text-white h-auto mb-5 container mx-auto">
+    <section id='about' className="m-16  text-white h-auto mb-5 container mx-auto">
       <motion.div variants={fadeTop} {...motionStep} className='col-span-3'>
         <div className="text-center mt-8 py-16">
-          <h3 className="text-4xl mb-10 font-semibold">
+          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-10">
     
             <span className="text-black dark:text-white text-shadow">About Me</span>
           </h3>
