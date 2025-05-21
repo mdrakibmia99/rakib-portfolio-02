@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,11 +12,14 @@ import image from "@/assets/images/contact.jpg"
 import Image from "next/image";
 import { toast } from "sonner";
 
+import { sendEmail } from "@/services";
+import { TContactEmailPayload } from "@/types/globalTypes";
+
 
 type FormData = {
   name: string;
-  subject: string;
-  userEmail: string;
+  subjectLine: string;
+  email: string;
   message: string;
 };
 
@@ -32,20 +35,13 @@ export default function Contact() {
 
 
 
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-    // console.log("Form Data:", data);
+  const onSubmit = async (data:TContactEmailPayload) => {
+    console.log("Form Data:", data);
     toast.loading("Sending Message...", { id: "sonarId" });
     try {
-     const result= await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/message`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data), // Send data to update
-        }
-      );
+        console.log("Form Data:", data);
+     const result= await sendEmail(data);
+      
       console.log(result);
       toast.success("Message sent successfully!", { id: "sonarId" });
     } catch (error) {
@@ -57,7 +53,19 @@ export default function Contact() {
   };
 
   return (
-    <section className="container mx-auto min-h-[100vh] max-w-5xl p-6 flex flex-col md:flex-row items-center justify-center gap-10">
+    <section className="custom-container py-16 max-w-5xl  p-6 ">
+        <motion.div
+        className=""
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+
+         <h3 className="text-4xl text-center mb-10 font-semibold">
+          <span className="text-white text-shadow">Contact</span>
+        </h3>
+      </motion.div>
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 py-16">
       {/* Left Animation Section */}
       <motion.div
         className="w-full md:w-1/2 text-center md:text-left"
@@ -128,9 +136,9 @@ export default function Contact() {
               <Input
                 type="text"
                 placeholder="Enter subject"
-                {...register("subject", { required: "Subject is required" })}
+                {...register("subjectLine", { required: "Subject is required" })}
               />
-              {errors.subject && <p className="text-red-500 text-sm">{errors.subject.message}</p>}
+              {errors.subjectLine && <p className="text-red-500 text-sm">{errors.subjectLine.message}</p>}
             </div>
 
             {/* Email Input (Auto-filled, Uneditable) */}
@@ -141,7 +149,7 @@ export default function Contact() {
               <Input
                 type="email"
                 className=""
-                {...register("userEmail")}
+                {...register("email")}
               />
             </div>
 
@@ -164,6 +172,7 @@ export default function Contact() {
           </motion.form>
         )}
       </motion.div>
+      </div>
     </section>
   );
 }

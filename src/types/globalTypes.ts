@@ -10,3 +10,10 @@ export type TSkillCategory = {
   icon: string; // This is a Lucide icon name as string like "ServerIcon"
   items: TSkillItem[];
 };
+
+export type TContactEmailPayload = {
+  name: string;
+  email: string;
+  subjectLine: string;
+  message: string;
+};
