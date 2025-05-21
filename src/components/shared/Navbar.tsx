@@ -27,7 +27,7 @@ const menuList = [
 
 const Navbar = () => {
   const pathname = useHash(); // Get current route
-  console.log(pathname, "pathname");
+  // console.log(pathname, "pathname");
 
   return (
     <header className="py-4 sticky top-0 z-50 bg-white dark:bg-black shadow-md transition-colors duration-300">

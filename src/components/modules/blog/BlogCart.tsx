@@ -6,7 +6,7 @@ import { TBlog } from "@/types/globalTypes";
 
 
 export default function BlogCart({ blog }: {blog:TBlog}) {
-    console.log(blog);
+    // console.log(blog);
   const { _id, title, description, coverImage } = blog;
 
   return (

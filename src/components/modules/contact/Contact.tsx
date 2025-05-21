@@ -36,13 +36,13 @@ export default function Contact() {
 
 
   const onSubmit = async (data:TContactEmailPayload) => {
-    console.log("Form Data:", data);
+    // console.log("Form Data:", data);
     toast.loading("Sending Message...", { id: "sonarId" });
     try {
-        console.log("Form Data:", data);
+        // console.log("Form Data:", data);
      const result= await sendEmail(data);
       
-      console.log(result);
+      // console.log(result);
       toast.success("Message sent successfully!", { id: "sonarId" });
     } catch (error) {
       console.log(error);
