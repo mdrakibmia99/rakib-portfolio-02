@@ -53,7 +53,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="custom-container max-w-5xl  p-6 ">
+    <section className="custom-container max-w-5xl">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 lg:py-16">
       {/* Left Animation Section */}
       <motion.div

@@ -12,7 +12,7 @@ export const getAllSkill = async () => {
   }
 };
 export const sendEmail = async (data: TContactEmailPayload): Promise<any> => {
-  console.log("Data in Service:", data);
+  // console.log("Data in Service:", data);
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_API}/auth/send-mail`,
     {

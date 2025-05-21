@@ -99,7 +99,7 @@ export default function SkillHighlights({
   skills: TSkillCategory[];
 }) {
   return (
-    <section id="skill" className="custom-container py-16">
+    <section id="skill" className="custom-container py-24 px-5 md:px-0">
       <div className="text-center mb-8">
         <Badge variant="secondary" className="mb-2">
           My Skills

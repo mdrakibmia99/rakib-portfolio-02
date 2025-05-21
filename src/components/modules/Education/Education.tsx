@@ -76,7 +76,7 @@ const EducationCard = ({ education }: { education: any }) => {
 
 const Education = () => {
   return (
-    <section id="education" className="py-16 bg-gray-900 transition-colors duration-300">
+    <section id="education" className=" bg-gray-900 transition-colors duration-300 py-24">
       <motion.div variants={fadeTop} initial="hidden" animate="visible">
         <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
           <span className="text-white text-shadow">Education</span>

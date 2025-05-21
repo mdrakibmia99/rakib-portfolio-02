@@ -21,8 +21,8 @@ export default async function Home() {
       <About />
       <Education />
       <SkillHighlights skills={skills as TSkillCategory[]} />
-
-      <div className="py-5 md:py-16 " id="projects">
+      <hr />
+      <div className="py-24 px-5 md:px-0 " id="projects">
         <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
           <span className="text-black dark:text-white text-shadow">
             Projects
@@ -41,8 +41,9 @@ export default async function Home() {
           </Link>
         </div>
       </div>
+      <hr />
       {/* blogs  */}
-      <div className="py-5 md:py-16 " id="blogs">
+      <div className="py-24 px-5 md:px-0" id="blogs">
         <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
           <span className="text-black dark:text-white text-shadow">Blogs</span>
         </h3>
@@ -59,8 +60,8 @@ export default async function Home() {
           </Link>
         </div>
       </div>
-
-      <div className="py-5 md:py-16 " id="contact">
+      <hr className="" />
+      <div className="py-24 px-5 md:px-0" id="contact">
         <h3 className="text-3xl md:text-4xl font-bold text-foreground text-center">
           <span className="text-black dark:text-white text-shadow">
             Contact

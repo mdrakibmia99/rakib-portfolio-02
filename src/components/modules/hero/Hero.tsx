@@ -38,7 +38,7 @@ const Hero = () => {
           </p>
           <div className="flex justify-center  md:justify-start mt-6">
             <a href={'/resume_Md_Rakib_Mia_Resume.pdf'} download={true}>
-              <Button className=" gap-2 bg-cyan-600 text-white dark:bg-white dark:text-cyan-600 hover:bg-cyan-700 dark:hover:bg-gray-200 transition-all px-4 py-2 rounded">
+              <Button className="cursor-pointer gap-2 bg-cyan-600 text-white dark:bg-white dark:text-cyan-600 hover:bg-cyan-700 dark:hover:bg-gray-200 transition-all px-4 py-2 rounded">
                 <Download className="w-5 h-5" />
                 Download Resume
               </Button>

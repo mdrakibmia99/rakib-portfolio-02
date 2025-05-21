@@ -8,7 +8,7 @@ function AboutLeft() {
 
   return (
     <motion.div variants={fadeTop} {...motionStep} className="col-span-3">
-      <div className="space-y-4  text-slate-400">
+      <div className="space-y-4  dark:text-slate-200 text-slate-600">
         <p>
           Hello! My name is Md Rakib Mia and I enjoy creating things that live
           on the internet. My interest in web development started back in 2021

@@ -9,15 +9,15 @@ import AboutLeft from "./AboutLeft";
 
 const About = () => {
   return (
-    <section id='about' className="m-16  text-white h-auto mb-5 container mx-auto">
+    <section id='about' className=" text-white h-auto mb-5 custom-container mx-auto py-24">
       <motion.div variants={fadeTop} {...motionStep} className='col-span-3'>
-        <div className="text-center mt-8 py-16">
+        <div className="text-center ">
           <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-10">
     
             <span className="text-black dark:text-white text-shadow">About Me</span>
           </h3>
 
-          <div className="flex md:flex-row flex-col-reverse items-center justify-between md:gap-6 gap-12 px-10 max-w-6xl mx-auto">
+          <div className="flex md:flex-row flex-col-reverse items-center justify-between md:gap-6 gap-12 px-5 md:px-0  mx-auto">
             <div className=" text-start lg:w-3/5 md:w-1/2 w-full z-0">
               <AboutLeft />
             </div>

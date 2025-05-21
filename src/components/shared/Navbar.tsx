@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,33 +12,32 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-
 import { ModeToggle } from "@/components/ModeToggle";
-
+import useHash from "@/app/hooks/useHash";
 
 const menuList = [
-  { id: 1, name: "HOME", link: "#home" },
-  // { id: 2, name: "ABOUT", link: "#about" },
+  { id: 1, name: "HOME", link: "/#home",hash:"#/#home" },
+  { id: 2, name: "ABOUT", link: "/#about" ,hash:"#/#about" },
   // { id: 3, name: "EDUCATION", link: "#education" },
-  { id: 4, name: "Skill", link: "#skill" },
-  { id: 5, name: "PROJECTS", link: "#projects" },
-  { id: 6, name: "BLOGS", link: "#blogs" },
-  { id: 7, name: "CONTACT", link: "#contact" },
+  { id: 4, name: "SKILL", link: "/#skill",hash:"#/#skill" },
+  { id: 5, name: "PROJECTS", link: "/#projects" ,hash:"#/#projects" },
+  { id: 6, name: "BLOGS", link: "/#blogs" ,hash:"#/#blogs" },
+  { id: 7, name: "CONTACT", link: "/#contact",hash:"#/#contact" },
 ];
 
 const Navbar = () => {
-
-  const pathname = usePathname(); // Get current route
-  console.log(pathname,'patha name');
+  const pathname = useHash(); // Get current route
+  console.log(pathname, "pathname");
 
   return (
     <header className="py-4 sticky top-0 z-50 bg-white dark:bg-black shadow-md transition-colors duration-300">
       <div className="custom-container flex justify-between items-center px-4 lg:px-0">
         {/* Left Side - Logo */}
-        <Link
-          href="/"
-          className="text-3xl font-bold text-cyan-400  "
-        >
+        <Link href="/" className="text-3xl font-bold text-cyan-400  " 
+        
+        onClick={() => {
+                    window.location.hash = "#home";
+                  }}>
           RAKIB
         </Link>
 
@@ -48,10 +46,15 @@ const Navbar = () => {
           <ul className="flex gap-6 font-bold">
             {menuList.map((item) => (
               <li key={item.id}>
-                <Link href={item.link}>
+                <Link
+                  href={item.link}
+                  onClick={() => {
+                    window.location.hash = item.link;
+                  }}
+                >
                   <span
                     className={`cursor-pointer transition-all duration-300 ${
-                      pathname === item.link
+                      pathname === item.hash
                         ? "text-cyan-500 dark:text-cyan-400"
                         : "text-gray-800 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400"
                     }`}
@@ -62,20 +65,18 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-           <ModeToggle />
+          <ModeToggle />
         </nav>
 
         {/* Right Side - Profile & Theme Toggle */}
-    
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden flex gap-3">
           <Sheet>
-             {/* Mobile Profile & Theme Toggle */}
-             <div className=" flex gap-4">
-    
-                <ModeToggle />
-              </div>
+            {/* Mobile Profile & Theme Toggle */}
+            <div className=" flex gap-4">
+              <ModeToggle />
+            </div>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">
                 <Menu className="size-5 text-black dark:text-white" />
@@ -106,7 +107,6 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-
             </SheetContent>
           </Sheet>
         </div>
