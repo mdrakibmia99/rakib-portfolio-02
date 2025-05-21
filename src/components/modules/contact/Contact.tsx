@@ -40,7 +40,7 @@ export default function Contact() {
     toast.loading("Sending Message...", { id: "sonarId" });
     try {
         // console.log("Form Data:", data);
-     const result= await sendEmail(data);
+      await sendEmail(data);
       
       // console.log(result);
       toast.success("Message sent successfully!", { id: "sonarId" });
