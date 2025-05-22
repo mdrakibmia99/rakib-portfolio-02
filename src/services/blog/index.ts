@@ -2,7 +2,9 @@
 
 export const getAllBlog = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/blogs`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/blogs`,{
+      cache: "no-store",
+    });
 
     const data = await res.json();
     return data;
@@ -13,7 +15,9 @@ export const getAllBlog = async () => {
 
 export const getSpecificBlog = async (id: string) => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/blogs/${id}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/blogs/${id}`,{
+      cache: "no-store",
+    });
 
     const data = await res.json();
     return data;

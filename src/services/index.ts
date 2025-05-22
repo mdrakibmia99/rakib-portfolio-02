@@ -3,7 +3,9 @@ import { TContactEmailPayload } from "@/types/globalTypes";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export const getAllSkill = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/skills`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/skills`,{
+      cache: "no-store",
+    });
 
     const data = await res.json();
     return data;
